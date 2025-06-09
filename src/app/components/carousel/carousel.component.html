@@ -1,0 +1,23 @@
+<div class="carousel-container">
+  <section class="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+        @for (item of carouselItems; track item) {
+          <div class="carousel-card fade-slide">
+            <div class="content">
+              <h2>{{ item.title }}</h2>
+              @if (item.image) {
+                <img [src]="item.image" [alt]="item.title" />
+              }
+            </div>
+            <div class="description">
+              <p>{{item.description}}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,192 @@
+:host {
+  .carousel-container .services {
+    padding: 3rem 1rem;
+    background-color: #f9fafb;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .carousel-card {
+    min-width: 100%;
+    flex-shrink: 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeSlideIn 0.6s ease-in-out forwards;
+  }
+
+  .carousel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .carousel-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .carousel-card img {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+
+  .carousel-card .description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: auto;
+  }
+
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media screen and (max-width: 1024px) {
+     .carousel-container .services {
+    padding: 3rem 1rem;
+    background-color: #f9fafb;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
+    /* Ensure no wrapping so sliding works */
+    flex-wrap: nowrap;
+  }
+
+  .carousel-card {
+    flex: 0 0 100%; /* exactly one card per viewport */
+    padding: 1.5rem;
+    background: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeSlideIn 0.6s ease-in-out forwards;
+    box-sizing: border-box; /* important to include padding inside width */
+  }
+
+  .carousel-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .carousel-card img {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+
+  .carousel-card .description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 1rem 0 0 0;
+  }
+
+  /* Animations */
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive tweaks */
+  @media (min-width: 768px) {
+    /* Optional: show 2 cards side by side on tablets */
+    .carousel-card {
+      flex: 0 0 50%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    /* Optional: show 3 cards side by side on desktops */
+    .carousel-card {
+      flex: 0 0 33.3333%;
+    }
+  }
+
+  }
+}

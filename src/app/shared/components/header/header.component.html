@@ -1,1 +1,20 @@
-<p>header works!</p>
+<div class="header-container">
+  <div class="logo-wrapper">
+    <img class="logo" src="assets/icons/logo.png" alt="Lumier logo" />
+  </div>
+
+  <!-- Burger Icon -->
+  <div class="burger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation -->
+  <nav [class.open]="isMenuOpen" id="main-nav">
+    <a>Home</a>
+    <a>Services</a>
+    <a>About Us</a>
+    <a>Contact Us</a>
+  </nav>
+</div>

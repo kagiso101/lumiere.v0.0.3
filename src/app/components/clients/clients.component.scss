@@ -1,0 +1,47 @@
+:host {
+  .clients-container {
+    background-color: #ffff;
+    padding: 40px;
+
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; // allows wrapping on smaller screens
+    max-width: 500px;
+    margin: auto;
+    gap: 20px;
+
+    img {
+      height: 200px;
+      width: 200px;
+      object-fit: contain;
+
+      @media (max-width: 768px) {
+        height: 150px;
+        width: 150px;
+      }
+
+      @media (max-width: 480px) {
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+
+  .heading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+  }
+}

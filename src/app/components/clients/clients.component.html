@@ -1,0 +1,12 @@
+<div class="clients-container">
+  <div class="heading">
+    <h3>Our Clients</h3>
+  </div>
+  <div class="image-wrapper">
+    @for(client of clients; track client) {
+      <div class="client-logo">
+        <img [src]="client.logo" [alt]="client.name" />
+      </div>
+    }
+  </div>
+</div>

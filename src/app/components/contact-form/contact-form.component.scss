@@ -1,0 +1,106 @@
+:host {
+  .form-container {
+    background-color: #fff;
+    padding: 40px 0;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 16px; /* Add padding for small screens */
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    word-break: break-word;
+  }
+
+  .row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap; /* Allow stacking on smaller screens */
+  }
+
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .form-group.half-width {
+    width: 48%;
+  }
+
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  span {
+    color: red;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    padding-top: 8px;
+  }
+
+  .submit-btn {
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  /* ✅ Responsive Rules */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+
+    .form-group.half-width {
+      width: 100%;
+    }
+
+    .checkbox-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .submit-btn {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+:host {
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    transition:
+      width 0.3s ease,
+      height 0.3s ease,
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+}
