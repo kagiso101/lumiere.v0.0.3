@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    HomeComponent,
     FooterComponent,
     HeaderComponent,
     ReactiveFormsModule
