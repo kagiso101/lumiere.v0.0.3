@@ -1,0 +1,123 @@
+:host {
+  display: block;
+  // background: linear-gradient(135deg, #0d0d0d 0%, #121212 100%);
+  color: #eee;
+  min-height: 100vh;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 3rem 1.5rem;
+  text-align: center;
+
+  .contact-container {
+    max-width: 620px;
+    margin: 0 auto;
+
+    .neon-text {
+      font-size: 2.8rem;
+      font-weight: 900;
+      // letter-spacing: 0.12em;
+      color: #d6336c;
+      // text-shadow:
+      //   0 0 6px #d6336c,
+      //   0 0 15px #d6336c,
+      //   0 0 30px #d6336c;
+      margin-bottom: 0.2em;
+      user-select: none;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: #bbb;
+      margin-bottom: 3rem;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-card {
+      background: #1c1c1c;
+      border-radius: 12px;
+      box-shadow:
+        0 4px 15px rgba(214, 51, 108, 0.3),
+        inset 0 0 10px rgba(214, 51, 108, 0.2);
+      padding: 2.4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #d6336c;
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-decoration: none;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        transition:
+          color 0.25s ease,
+          transform 0.25s ease,
+          box-shadow 0.3s ease;
+
+        svg {
+          width: 26px;
+          height: 26px;
+          flex-shrink: 0;
+          filter: drop-shadow(0 0 3px #d6336c);
+          transition: filter 0.3s ease;
+        }
+
+        span {
+          white-space: nowrap;
+          user-select: text;
+        }
+
+        &:hover,
+        &:focus {
+          color: #ff7ba0;
+          outline: none;
+          transform: scale(1.05);
+          box-shadow:
+            0 0 15px #ff7ba0,
+            0 0 30px #ff7ba0;
+          svg {
+            filter: drop-shadow(0 0 8px #ff7ba0);
+          }
+        }
+      }
+
+      .divider {
+        height: 1px;
+        background: #d6336c;
+        opacity: 0.3;
+        margin: 0 4px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+
+    .contact-container {
+      .neon-text {
+        font-size: 2.8rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .contact-card {
+        padding: 1.8rem 1.4rem;
+
+        .contact-link {
+          font-size: 1.1rem;
+
+          svg {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}

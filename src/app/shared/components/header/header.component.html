@@ -1,6 +1,6 @@
 <div class="header-container">
   <div class="logo-wrapper">
-    <img class="logo" src="assets/icons/logo.png" alt="Lumier logo" />
+    <img (click)="navigate('/')" class="logo" src="assets/icons/logo.png" alt="Lumier logo" />
   </div>
 
   <!-- Burger Icon -->
@@ -11,10 +11,20 @@
   </div>
 
   <!-- Navigation -->
-  <nav [class.open]="isMenuOpen" id="main-nav">
-    <a>Home</a>
-    <a>Services</a>
-    <a>About Us</a>
-    <a>Contact Us</a>
-  </nav>
+ <nav
+  [class.open]="isMenuOpen"
+  id="main-nav"
+  role="navigation"
+  aria-label="Main navigation"
+>
+  <a
+    *ngFor="let link of links"
+    (click)="navigate(link.route)"
+    [ngClass]="{ 'active': isActive(link.route) }"
+    tabindex="0"
+  >
+    {{ link.label }}
+  </a>
+</nav>
+
 </div>

@@ -8,27 +8,39 @@
     }
   }
 
+  h3 {
+    font-size: 2.8rem;
+  }
+
   .image-wrapper {
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap; // allows wrapping on smaller screens
+    flex-wrap: wrap;
     max-width: 500px;
     margin: auto;
     gap: 20px;
 
-    img {
-      height: 200px;
-      width: 200px;
-      object-fit: contain;
+    .client-logo {
+      img {
+        height: 200px;
+        width: 200px;
+        object-fit: contain;
+        animation: pulse 4s ease-in-out infinite;
+        transition: transform 0.3s ease-in-out;
 
-      @media (max-width: 768px) {
-        height: 150px;
-        width: 150px;
-      }
+        &:hover {
+          transform: scale(1.3);
+        }
 
-      @media (max-width: 480px) {
-        height: 100px;
-        width: 100px;
+        @media (max-width: 768px) {
+          height: 150px;
+          width: 150px;
+        }
+
+        @media (max-width: 480px) {
+          height: 100px;
+          width: 100px;
+        }
       }
     }
   }
@@ -42,6 +54,15 @@
     @media (max-width: 768px) {
       font-size: 1.2rem;
       margin-bottom: 20px;
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
     }
   }
 }

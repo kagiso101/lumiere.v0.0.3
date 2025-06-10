@@ -1,1 +1,18 @@
-<p>service-page works!</p>
+<section class="service-page">
+  <header class="header">
+    <h1>Our Services</h1>
+    <p>Your brand deserves the best — explore how we help you shine across every digital touchpoint.</p>
+  </header>
+
+  <div class="cards">
+    <article *ngFor="let service of services" class="card" tabindex="0" role="region" [attr.aria-label]="service.title">
+      <div class="image-wrapper">
+        <img [src]="service.image" [alt]="service.title" loading="lazy" />
+      </div>
+      <div class="card-content">
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.description }}</p>
+      </div>
+    </article>
+  </div>
+</section>

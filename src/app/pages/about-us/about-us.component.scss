@@ -1,0 +1,124 @@
+:host {
+  display: block;
+
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff;
+
+    h1, h2 {
+      color: #d6336c; /* pink headline color */
+      text-align: center;
+      font-size: 2.8rem;
+    }
+
+    p, li {
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #f7a1b9; /* lighter pink for intro text */
+    }
+
+    .values-section {
+      margin-top: 30px;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          margin-bottom: 12px;
+
+          strong {
+            color: #d6336c; /* pink strong text */
+          }
+        }
+      }
+    }
+
+    .closing {
+      font-weight: 500;
+      margin-top: 30px;
+      color: #f07ea8; /* medium pink */
+    }
+
+    .cta {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #d6638a; /* muted pink for call to action */
+    }
+
+    .image-wrapper {
+      margin: 20px 0;
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 700px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(214, 51, 108, 0.15);
+        height: auto;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 8px 40px rgba(214, 51, 108, 0.5);
+        }
+      }
+    }
+  }
+
+  // Tablet view adjustments
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 30px 16px;
+
+      .intro {
+        font-size: 1.1rem;
+      }
+
+      .values-section h2 {
+        font-size: 1.3rem;
+      }
+
+      .cta {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // Mobile view adjustments
+  @media (max-width: 480px) {
+    .about-container {
+      padding: 20px 12px;
+
+      .intro {
+        font-size: 1rem;
+      }
+
+      .values-section h2 {
+        font-size: 1.2rem;
+      }
+
+      .cta {
+        font-size: 0.95rem;
+      }
+
+      .image-wrapper img {
+        max-width: 100%;
+      }
+    }
+  }
+}

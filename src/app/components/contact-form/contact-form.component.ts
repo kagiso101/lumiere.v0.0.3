@@ -1,19 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import emailjs from 'emailjs-com';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [ReactiveFormsModule,
-    CommonModule
-  ],
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.scss'
+  styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
- form: FormGroup;
+  form: FormGroup;
 
   constructor(private fb: FormBuilder) {
+    // Initialize EmailJS with your public user ID (optional but recommended)
+    emailjs.init('oAgm9WRzf2IecNgOp');
+
     this.form = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -28,8 +31,35 @@ export class ContactFormComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log(this.form.value);
-      alert('Message sent!');
+      const serviceID = 'service_xbe089c';
+      const templateID = 'template_f27y0ua';
+
+      // Get selected services as comma-separated string
+      const services = this.form.value.services;
+      const selectedServices = Object.keys(services)
+        .filter(key => services[key])
+        .join(', ');
+
+      // Prepare the template parameters — make sure these match your EmailJS template variables
+      const templateParams = {
+        to_email: 'hadebekagiso3@gmail.com',  // your email as recipient (optional depending on your EmailJS template)
+        from_name: this.form.value.name,
+        from_email: this.form.value.email,
+        message: this.form.value.message,
+        services: selectedServices
+      };
+
+      // Send the email using EmailJS
+      emailjs.send(serviceID, templateID, templateParams)
+        .then(() => {
+          alert('Message sent!');
+          this.form.reset();
+        })
+        .catch((err) => {
+          console.error('Email send error:', err);
+          alert('Failed to send message.');
+        });
+
     } else {
       this.form.markAllAsTouched();
     }
