@@ -18,15 +18,20 @@ export class ContactFormComponent {
     emailjs.init('oAgm9WRzf2IecNgOp');
 
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: [''],
-      services: this.fb.group({
-        branding: [false],
-        digitalExperiences: [false],
-        webDevelopment: [false],
-      }),
-    });
+  name: ['', Validators.required],
+  email: ['', [Validators.required, Validators.email]],
+  message: [''],
+  services: this.fb.group({
+    branding: [false],
+    ai: [false],
+    design: [false],
+    socialMediaManagement: [false],
+    marketing: [false],
+    advertising: [false],
+    seo: [false],
+    contentCreation: [false],
+  }),
+});
   }
 
   onSubmit() {
