@@ -15,7 +15,8 @@ export class ContactFormComponent {
 
   constructor(private fb: FormBuilder) {
     // Initialize EmailJS with your public user ID (optional but recommended)
-    emailjs.init('oAgm9WRzf2IecNgOp');
+    emailjs.init('7EM-D8jZaNG09jRsG');
+
 
     this.form = this.fb.group({
   name: ['', Validators.required],
@@ -36,8 +37,8 @@ export class ContactFormComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      const serviceID = 'service_xbe089c';
-      const templateID = 'template_f27y0ua';
+      const serviceID = 'service_4hqmki2';
+      const templateID = 'template_3z2p28b';
 
       // Get selected services as comma-separated string
       const services = this.form.value.services;
@@ -47,7 +48,7 @@ export class ContactFormComponent {
 
       // Prepare the template parameters — make sure these match your EmailJS template variables
       const templateParams = {
-        to_email: 'hadebekagiso3@gmail.com',  // your email as recipient (optional depending on your EmailJS template)
+        to_email: 'support@lumieremedia.co.za',  // your email as recipient (optional depending on your EmailJS template)
         from_name: this.form.value.name,
         from_email: this.form.value.email,
         message: this.form.value.message,
